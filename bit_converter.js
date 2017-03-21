@@ -30,7 +30,7 @@ var decToBin = function(src) {
     var n = 0;
     var returnString = "";
     
-    while (2 ** (n+1) < src) {
+    while (2 ** (n) < src) {
         n++;
     }
     
@@ -39,7 +39,7 @@ var decToBin = function(src) {
             returnString += "1";
             src = src % 2 ** n;
         } else {
-            returnString += "0";
+            returnString += returnString === "" ? "" : "0";
         }
     }
     
